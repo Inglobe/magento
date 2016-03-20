@@ -1,0 +1,6 @@
+MYSQL_ROOT_PASSWORD=laOficina2016
+MYSQL_USER=magento
+MYSQL_PASSWORD=magento
+MYSQL_DATABASE=magento
+
+
