@@ -1,5 +1,5 @@
 web:
-  image: alexcheng/magento
+  image: inglobe/magento
   ports:
     - "12345:80"
   volumes:
