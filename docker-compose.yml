@@ -1,5 +1,5 @@
 web:
-  image: inglobe/magento
+  image: occitech/magento:php5.5-apache
   ports:
     - "12345:80"
   volumes:
@@ -9,10 +9,26 @@ web:
     - redis
   env_file:
     - env
+  restart: always
 mysql:
-  image: mysql:5.6
+  image: mysql
   env_file:
     - env
+  volumes:
+    - ./db:/mnt
+  restart: always
 redis:
   image: redis
+  restart: always
+myadmin:
+  image: phpmyadmin/phpmyadmin
+  links:
+    - mysql:mysql
+  ports:
+    - 8080:80
+  env_file:
+    - env
+  restart: always
+
+
  
