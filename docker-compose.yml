@@ -2,8 +2,11 @@ web:
   image: occitech/magento:php5.5-apache
   ports:
     - "12345:80"
+    - "443:443"
   volumes:
     - ./html:/var/www/htdocs
+    - ./certs:/etc/ssl/certs
+    - ./sites:/etc/apache2/sites-available
   links:
     - mysql
     - redis
